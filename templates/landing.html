@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Movie Binger</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="landing-container">
+        <h1>Welcome to</h1>
+        <img src="{{ url_for('static', filename='movie-binger-logo.png') }}" alt="Movie Binger Logo" class="logo"> 
+        <p>Your go-to place for movie recommendations!</p>
+        <a href="/main" class="proceed-button" id="get-started-btn">Get Started</a>
+    </div>
+
+    <script>
+        document.getElementById('get-started-btn').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            const container = document.querySelector('.landing-container');
+            
+            container.classList.add('fade-out');
+            
+            setTimeout(() => {
+                window.location.href = '/main';
+            }, 500); 
+        });
+    </script>
+    
+</body>
+</html>

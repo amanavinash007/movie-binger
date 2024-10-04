@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <title>Movie Binger</title>
+</head>
+<body>
+    <h1>Welcome to Movie Binger</h1>
+
+    <h2>Filter Movies</h2>
+    <form method="GET" action="/main">
+        <label for="genre">Select Genre:</label>
+        <select id="genre" name="genre">
+            <option value="">All</option>
+            <option value="Action">Action</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Drama">Drama</option>
+            <option value="Horror">Horror</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <!-- Add more genres as needed -->
+        </select>
+
+        <label for="actor">Actor:</label>
+        <input type="text" id="actor" name="actor">
+
+        <label for="director">Director:</label>
+        <input type="text" id="director" name="director">
+
+
+        <button class="cssbuttons-io" type="submit">
+            <span>
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z" fill="currentColor"></path>
+                </svg>
+                Filter
+            </span>
+        </button>
+    </form>
+
+    <h2>Available Movies</h2>
+    <ul>
+        {% for index, row in movies.iterrows() %}
+            <li>{{ row['Title'] }} ({{ row['Year'] }})</li>
+        {% endfor %}
+    </ul>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('home-container').classList.add('show');
+        });
+    </script>
+</body>
+</html>

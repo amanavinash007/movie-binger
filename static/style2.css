@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #0B1320;
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif; /* Using the new font */
+    color: white;
+}
+
+.landing-container {
+    text-align: center;
+}
+
+.logo {
+    width: 250px; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+h1 {
+    font-size: 4em; /* Increase the size of the welcome text */
+    margin-bottom: -10px; /* Adjust the bottom margin as needed */
+    z-index: 1;
+}
+
+p {
+    margin-top: 10px; /* Adjust the top margin to move the paragraph further up */
+    font-size: 1.5em; /* Optional: increase font size for better visibility */
+}
+
+.proceed-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.proceed-button:hover {
+    background-color: #0056b3;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Adjust duration and easing as needed */
+}
+
+.landing-container {
+    transition: opacity 0.5s ease; /* Ensure the container also transitions */
+}
